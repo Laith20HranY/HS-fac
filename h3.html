@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!--Link With CSS-->
+    <title>Manager Registration Portal</title>
+    <link rel='stylesheet' href='c1.css'>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link href="assets/img/Hs logosmal.PNG" rel="icon">
+    <link href="assets/img/HS logog.gif" rel="apple-touch-icon">
+</head>
+<body class="body">
+    <div class="title"></div>
+    <div class="centerer">   
+        <h1 style="color: #ffc451; padding-left: 100px;">Registration</h1>
+        <form id="managerForm" method="post" action="/managers" class="php-email-form">
+            <div class="txt_field">
+                <input type="text" name="Manager_first_name" required>
+                <span></span>
+                <label>First Name</label>
+            </div>       
+            <div class="txt_field">
+                <input type="text" name="Manager_last_name" required>
+                <span></span>
+                <label>Last Name</label>
+            </div>       
+            <div class="txt_field">
+                <input type="number" name="National_ID" required>
+                <span></span>
+                <label>National ID</label>
+            </div>       
+            <div class="txt_field">
+                <input type="text" name="DEP" required>
+                <span></span>
+                <label>Department</label>
+            </div>       
+            <div class="txt_field">
+                <input type="number" name="Manager_id" required>
+                <span></span>
+                <label>Manager ID</label>
+            </div>       
+            <div class="txt_field">
+                <input type="email" name="email" required>
+                <span></span>
+                <label>Email</label>
+            </div>       
+            <div class="txt_field">
+                <input type="password" name="password" required>
+                <span></span>
+                <label>Password</label> 
+            </div>
+           
+            <input type="submit" value="Send" style="color: rgb(253, 253, 253);">
+            <div class="signup_link">
+                Cancel Change? <a href="h2.html">Home</a>
+            </div>
+        </form>
+        <div id="messageBox"></div>
+    </div>
+    
+    <script>
+        document.getElementById('managerForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            const formData = {
+                Manager_id: this.Manager_id.value,
+                Manager_first_name: this.Manager_first_name.value,
+                Manager_last_name: this.Manager_last_name.value,
+                National_ID: this.National_ID.value,
+                DEP: this.DEP.value,
+                email: this.email.value,
+                password: this.password.value
+            };
+            
+            const response = await fetch('/managers', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+            
+            const result = await response.json();
+            document.getElementById('messageBox').innerText = result.message;
+        });
+    </script>
+</body>
+</html>

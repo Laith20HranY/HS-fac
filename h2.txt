@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <!--Link With CSS-->
+  <title>Registration portal</title>
+  <link rel='stylesheet'  href='c1.css'>
+</head>
+
+<body>
+  
+  <!--LOGO-->
+  <div class="title">
+    <img src="R2 (2).png" alt="" width="400" height="400">  
+  </div>
+  
+  <div class="center">   
+    <h1>Login</h1>
+    <form method="post" action="p1.php">
+
+           <!--ID-->
+      <div class="txt_field">
+        <input type="number" name=""value="" required>
+        <span></span>
+        <label>Student ID</label>
+    </div>
+
+          <!--Password-->
+      <div class="txt_field">
+        <input type="password"name=""value="" required>
+        <span></span>
+        <label>Password</label>
+      </div>
+
+          <!--Forget Password-->
+      <a href="h4.html">
+        <div class="pass">Forgot Password?</div>
+      </a>
+  
+          <!--Submit-->
+      <input type="submit" name="h1Submit" value="Login" >
+
+          <!--Sign up-->
+      <div class="signup_link"> First Time? 
+        <a href="h2.html">Register</a>
+      </div>
+
+    </form>
+  </div>
+
+</body>
+</html>

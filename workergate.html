@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>HS workergate</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/Hs logosmal.PNG" rel="icon">
+  <link href="assets/img/HS logog.gif" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-lg-between">
+
+      <h1 class="logo me-auto me-lg-0"><a href="index.html">HS<span>.</span></a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+          
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          
+          <li class="dropdown"><a href="#"><span>Requests </span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="r1.html">Day OFF</a></li>
+              <li class="dropdown"><a href="#"><span> DPP</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="dpp1.html">Daily production report</a></li>
+                  <li><a href="dpp2.html">Daily malfunction report </a></li>
+                  <li><a href="dpp3.html">Maintenance team request</a></li>
+                  
+                </ul>
+              </li>
+              <li><a href="r2.html">Salary increase</a></li>
+              <li><a href="r3.html">Leave</a></li>
+              <li><a href="r4.html">Advance payment</a></li>
+              <li><a href="r5.html">Transfer to another DEP</a></li>
+              <li><a href="r6.html">salary review</a></li>
+              <li><a href="fingerprint.html">Fingerprint</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="info-details.html">INFO</a></li>
+          <li><a class="nav-link scrollto" href="pending.html">Pendings</a></li>
+
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+      <a href="index.html" class="get-started-btn scrollto">Logout</a>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-xl-6 col-lg-8">
+          <h3 id="workerGeneralization">
+            Dear worker, we come together as one team in this factory. We hope that there will
+            be no divisions between us, but rather unity of thought and judgment. We ask God for
+            safety, health and well-being for all our colleagues. We hope they find mutual respect, cooperation
+            and tolerance in their dealings. Let us treat each other as we would like to be treated.
+            We will defend you as a member of our family<span>.</span>
+          </h3>
+          <h2>We are a team of future leaders</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+window.addEventListener('DOMContentLoaded', async () => {
+  const response = await fetch('/generalizations'); // Fetch the latest generalization
+  const data = await response.json();
+
+  if (data && data.message) {
+    const generalizationElement = document.getElementById('workerGeneralization');
+    generalizationElement.textContent = data.message; // Replace the old generalization
+  }
+});
+
+
+
+
+  </script>
+
+
+
+
+
+ <!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+            <img src="assets/img/about.jpg" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+            <h3>With the HS Factory ,Jordanian nation's industries are in safe hands</h3>
+            <p class="fst-italic">
+              From our Arab industries from within our Jordanian lands to your hands
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i>The production process is carried out under the supervision of professional specialists.</li>
+              <li><i class="ri-check-double-line"></i>We take into account health care procedures at the highest level.</li>
+              <li><i class="ri-check-double-line"></i>All materials are natural and produced by our own farms.</li>
+            </ul>
+            <p>
+              Hand in hand for the renaissance of the nation and the preservation of
+               our industries with Jordanian hands and Hashemite arms of which the Jordanian citizen is proud..
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container" data-aos="fade-up">
+         
+        <div class="section-title">
+          <h2>Requests</h2>
+          <p>Submit your Requests here</p>
+        </div>
+         
+         
+        <div class="row">
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+          <div class="icon-box">
+            <div class="icon"><i class="bx bx-file"></i></div>
+            <h4><a href="r2.html">Salary increase</a></h4>
+            <p>Fill correct INFO please and we wil respond early</p>
+          </div>
+        </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4><a href="r1.html">Day Off</a></h4>
+              <p>Fill correct INFO please and we wil respond early</p>
+            </div>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4><a href="r4.html">Advance payment</a></h4>
+              <p>Fill correct INFO please and we wil respond early</p>
+            </div>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4><a href="r3.html">Leave</a></h4>
+              <p>Fill correct INFO please and we wil respond early</p>
+            </div>
+          </div>
+
+
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4><a href="r6.html">Salary Review</a></h4>
+              <p>Fill correct INFO please and we wil respond early</p>
+            </div>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4><a href="r5.html">Transfer to another DEP</a></h4>
+              <p>Fill correct INFO please and we wil respond early</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- End .content-->
+          </div><!-- ======= Counts Section ======= -->
+   <!-- End Counts Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/King_Hussein_1.jpeg" class="testimonial-img" alt="">
+                <h3>king hussain</h3>
+                <h4>King of jordan</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Man is the most precious thing we have.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/wasfi.jpeg" class="testimonial-img" alt="">
+                <h3>WASFI ALtal</h3>
+                <h4>former prime minister</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Wheat is my wheat and the country is my country
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/mohammad.webp" class="testimonial-img" alt="">
+                <h3>prophet mohammad</h3>
+                <h4>peace be up on him</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  No one has ever eaten better food than the work of his own hands, and the Prophet of God, David, 
+                  peace be upon him, used to eat from the work of his own hands.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/aflaton.jpg" class="testimonial-img" alt="">
+                <h3>plato</h3>
+                <h4>philosopher</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  A little knowledge with little practice is more beneficial than a lot of knowledge with little practice
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>      <!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/jorg.jpeg" class="testimonial-img" alt="">
+                <h3>George Bernard Shaw</h3>
+                <h4>Writer</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  The more you work, the more you live.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+    
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>HS<span>.</span></h3>
+              <p>
+                al zarqa'a <br>
+                AM 535022, JOR<br><br>
+                <strong>Phone:</strong> +1 5589 55488 55<br>
+                <strong>Email:</strong> hashimete student factory@gmail.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+         
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>HS</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/ -->
+        Developed by <a style="color: #ffc451;">HS team</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

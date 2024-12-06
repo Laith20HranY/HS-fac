@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <!--Link With CSS-->
+  <title>Registration portal</title>
+  <link rel='stylesheet'  href='c1.css'>
+</head>
+<body>
+  
+  
+      <!--LOGO-->
+  <div class="title">
+    <img src="R2 (2).png" alt="" width="400" height="400">  
+  </div>
+  <div class="center">  
+    <h1>Sign Up</h1>
+    
+    <form method="post" action="p1.php">
+
+          <!--ID-->
+      <div class="txt_field">
+          <input type="number" name=""value="" required>
+          <span></span>
+          <label>Student ID</label>
+      </div>     
+
+          <!--Name-->
+      <div class="txt_field">
+        <input type="text"name=""value="" required>
+        <span></span>
+        <label>Name</label>
+      </div>
+
+             <!--Email-->
+      <div class="txt_field">
+        <input type="Email"name="email"value="" required>
+        <span></span>
+        <label>Email</label>
+      </div>
+
+          <!--Password-->
+      <div class="txt_field">
+        <input type="password"name=""value="" required>
+        <span></span>
+        <label>Password</label>
+      </div>
+
+            <!--re-Password-->
+      <div class="txt_field">
+        <input type="password"name=""value="" required>
+        <span></span>
+        <label>Re-Password</label>
+      </div>
+
+            <!--Submit-->
+      <input type="submit"value="Create">
+    
+            <!--Sign up-->
+      <div class="signup_link">
+        Have an account? <a href="h1.html">Login</a>
+      </div>
+
+    </form>
+  </div>
+
+</body>
+</html>
