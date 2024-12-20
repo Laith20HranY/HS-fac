@@ -4,17 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
   <title>HS request</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
   <!-- Favicons -->
   <link href="assets/img/Hs logosmal.PNG" rel="icon">
   <link href="assets/img/HS logog.gif" rel="apple-touch-icon">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -23,61 +20,42 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!--  Main CSS File -->
+  <!-- Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
+  <style>
+    #updateModal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: calc(100% + 20px);
+      height: calc(100% + 20px);
+      background: white;
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 620px;
+      max-height: 620px;
+    }
+    #updateModal .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    #formFields {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
-  <style>
-    #messageBox2 {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #ffffff; /* White background */
-        border: 2px solid #007bff; /* Blue border */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
-        border-radius: 10px;
-        padding: 20px 30px;
-        text-align: center;
-        z-index: 9999;
-        display: none; /* Hidden by default */
-        width: 80%; /* Adaptive width */
-        max-width: 400px; /* Maximum width */
-      }
-      
-      #messageBox2 h4 {
-        color: #4CAF50; /* Text matches border color */
-        font-size: 18px;
-        margin-bottom: 10px;
-      }
-      
-      #messageBox2 p {
-        color: #555555; /* Subtle text color */
-        font-size: 14px;
-        margin-bottom: 20px;
-      }
-      
-      #messageBox2 button {
-        background-color: #007bff; /* Blue button */
-        color: #ffffff;
-        border: none;
-        border-radius: 5px;
-        padding: 10px 20px;
-        font-size: 14px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
-      
-      #messageBox2 button:hover {
-        background-color: #0056b3; /* Darker blue on hover */
-      }
-    
-    
-    </style>
-  <!-- ======= Header ======= -->
   <header id="header" class="fixed-top header-inner-pages ">
     <div class="container d-flex align-items-center justify-content-lg-between">
 
@@ -93,9 +71,7 @@
          
           <li class="dropdown"><a href="#"><span>Manage </span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="m1.html"> Add Orders</a></li>
-              <li><a href="m8.html">View Ordars</a></li>
-
+              <li><a href="m1.html">Orders</a></li>
               <li class="dropdown"><a href="#"><span>View DPP</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="m2.html">View Daily production report</a></li>
@@ -118,25 +94,17 @@
       <a href="index.html" class="get-started-btn scrollto">Logout</a>
 
     </div>
-  </header><!-- End Header -->
-
-
+  </header>
   <main id="main">
-
-    <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
-
         <div class="section-title">
           <h2>Manage</h2>
           <p> Add Orders</p>
         </div>
 
         <div class="row mt-5">
-
           <div class="col-lg-8 mt-5 mt-lg-0">
-          
-
             <form id="orderForm" class="php-email-form" role="form">
               <div class="row">
                 <table class="table table-striped table-bordered">
@@ -165,23 +133,183 @@
                       <button id="ordermassage" type="submit">Submit Order</button>
                     </div>
                   </thead>
-                  <tbody></tbody> <!-- Added a tbody for dynamically fetched rows -->
+                  <tbody></tbody>
                 </table>
               </div>
             </form>
-            <br>
-            <form id="orderForm" class="php-email-form" role="form">
-              <div class="row">
-                <table class="table table-striped table-bordered">
-                  <thead class="thead-dark"></thead>
-                  <tbody></tbody> <!-- Added a tbody for dynamically fetched rows -->
-                </table>
+
+            <button id="updateButton" class="btn btn-primary">Update Orders</button>
+
+            
+            <div id="updateModal">
+              <button class="close" onclick="document.getElementById('updateModal').style.display='none'">&times;</button>
+              <form id="retrieveForm" class="php-email-form">
+                <label for="patch_num">Patch Number:</label>
+                <br>
+                <input type="text" id="retrieve_patch_num" name="patch_num" required>
+                <button type="button" id="retrieveButton">Retrieve</button>
+              </form>
+              <div id="formFields">
+                <form id="updateForm" class="php-email-form">
+                  <label for="product_id">Product ID:</label>
+                  <label for="machine_id">Machine ID:</label>
+                  <input type="text" id="update_machine_id" name="machine_id" required>
+                  <label for="quantity">Quantity:</label>
+                  <input type="number" id="update_quantity" name="quantity" required>
+                  <label for="order_date">Order Date:</label>
+                  <input type="date" id="update_order_date" name="order_date" required>
+                  <label for="status">Status:</label>
+                  <select id="update_status" name="status">
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                  </select>
+                
+                  <button type="submit">Update Order</button>
+                </form>
               </div>
-            </form>
-            <br>
+            </div>
+
             <script>
-            document.getElementById('orderForm').addEventListener('submit', async (e) => {
-  e.preventDefault(); // Prevent the default form submission behavior
+              document.getElementById('orderForm').addEventListener('submit', async (e) => {
+                e.preventDefault(); // Prevent the default form submission behavior
+
+                const messageBox = document.getElementById('messageBox2');
+                if (!messageBox) {
+                  console.error('Message box element is missing in the DOM.');
+                  return;
+                }
+
+                const formData = new FormData(e.target);
+                const data = Object.fromEntries(formData.entries());
+
+                try {
+                  const response = await fetch('/submit-order', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data),
+                  });
+
+                  if (response.ok) {
+                    const { newOrder } = await response.json();
+
+                    messageBox.textContent = 'Your order has been submitted successfully!';
+                    messageBox.style.color = 'green';
+
+                    const tbody = document.querySelector('table tbody');
+                    tbody.innerHTML += `
+                      <tr>
+                        <td>${newOrder.product_id}</td>
+                        <td>${newOrder.machine_id}</td>
+                        <td>${newOrder.quantity}</td>
+                        <td>${new Date(newOrder.order_date).toLocaleDateString()}</td>
+                        <td>${newOrder.status}</td>
+                        <td>
+                          <button class="btn btn-danger" onclick="deleteOrder(${newOrder.patch_num})">Delete</button>
+                        </td>
+                      </tr>
+                    `;
+
+                    e.target.reset();
+                  } else {
+                    const errorText = await response.text();
+                    messageBox.textContent = `Error: ${errorText}`;
+                    messageBox.style.color = 'red';
+                  }
+                } catch (error) {
+                  messageBox.textContent = 'Error: Unable to submit data to the server!';
+                  messageBox.style.color = 'red';
+                } finally {
+                  messageBox.style.display = 'block';
+                  setTimeout(() => {
+                    messageBox.style.display = 'none';
+                  }, 3000);
+                }
+              });
+
+              fetch('/orders')
+                .then((res) => res.json())
+                .then((orders) => {
+                  const tbody = document.querySelector('table tbody');
+                  const thead = document.querySelector('table thead');
+                  thead.innerHTML = `
+                    <tr>
+                      <th>Product ID</th>
+                      <th>Machine ID</th>
+                      <th>Quantity</th>
+                      <th>Order Date</th>
+                      <th>Status</th>
+                       <th>Patch Number</th>
+                      <th>Actions</th>
+                     
+
+                    </tr>
+                  `;
+
+                  orders.forEach((order) => {
+                    tbody.innerHTML += `
+                      <tr>
+                        <td>${order.product_id}</td>
+                        <td>${order.machine_id}</td>
+                        <td>${order.quantity}</td>
+                        <td>${new Date(order.order_date).toLocaleDateString()}</td>
+                        <td>${order.status}</td>
+                         <td>${order.patch_num}</td>
+                        <td>
+                          <button class="btn btn-danger" onclick="deleteOrder(${order.patch_num})">Delete</button>
+                        </td>
+                      </tr>
+                    `;
+                  });
+                })
+                .catch((error) => console.error('Error fetching orders:', error));
+
+              async function deleteOrder(patch_num) {
+                try {
+                  const response = await fetch(`/delete-order-by-patch/${patch_num}`, {
+                    method: 'DELETE',
+                  });
+                  if (response.ok) {
+                    document.querySelector(`button[onclick="deleteOrder(${patch_num})"]`).closest('tr').remove();
+                  } else {
+                    console.error('Failed to delete order');
+                  }
+                } catch (error) {
+                  console.error('Error:', error);
+                }
+              }
+
+              document.getElementById('updateButton').addEventListener('click', function () {
+                document.getElementById('updateModal').style.display = 'block';
+              });
+
+              document.getElementById('retrieveButton').addEventListener('click', async function () {
+                const productId = document.getElementById('retrieve_product_id').value;
+                if (productId) {
+                  try {
+                    const response = await fetch(`/orders?product_id=${productId}`);
+                    if (response.ok) {
+                      const orders = await response.json();
+                      if (orders.length > 0) {
+                        const order = orders[0];
+                        document.getElementById('update_machine_id').value = order.machine_id;
+                        document.getElementById('update_quantity').value = order.quantity;
+                        document.getElementById('update_order_date').value = new Date(order.order_date).toISOString().split('T')[0];
+                        document.getElementById('update_status').value = order.status;
+                        document.getElementById('formFields').style.display = 'block';
+                      } else {
+                        console.error('Order not found');
+                      }
+                    } else {
+                      console.error('Error fetching order');
+                    }
+                  } catch (error) {
+                    console.error('Error fetching order:', error);
+                  }
+                }
+              });
+              document.getElementById('updateForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
 
   const messageBox = document.getElementById('messageBox2');
   if (!messageBox) {
@@ -189,105 +317,51 @@
     return;
   }
 
-  // Extract form data
   const formData = new FormData(e.target);
   const data = Object.fromEntries(formData.entries());
+  const patchNum = data.patch_num; // Ensure patch_num is correctly extracted
 
   try {
-    // Submit the order data
-    const response = await fetch('/submit-order', {
-      method: 'POST',
+    const response = await fetch(`/update-order/${patchNum}`, {
+      method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     });
 
     if (response.ok) {
-      const { newOrder } = await response.json();
-
-      // Display success message
-      messageBox.textContent = 'Your order has been submitted successfully!';
+      const updatedOrder = await response.json();
+      messageBox.textContent = 'Your order has been updated successfully!';
       messageBox.style.color = 'green';
-
-      // Update the table with the new order
-      const tbody = document.querySelector('table tbody');
-      tbody.innerHTML += `
-        <tr>
-          <td>${newOrder.product_id}</td>
-          <td>${newOrder.machine_id}</td>
-          <td>${newOrder.quantity}</td>
-          <td>${new Date(newOrder.order_date).toLocaleDateString()}</td>
-          <td>${newOrder.status}</td>
-        </tr>
-      `;
-
-      // Optionally clear the form fields
       e.target.reset();
+      setTimeout(() => {
+        window.top.location.href = window.top.location.href; // Exit iframe and refresh parent window
+      }, 2000);
     } else {
-      // If the server responds with an error
       const errorText = await response.text();
       messageBox.textContent = `Error: ${errorText}`;
       messageBox.style.color = 'red';
     }
   } catch (error) {
-    // Handle network or other unexpected errors
-    messageBox.textContent = 'Error: Unable to submit data to the server!';
+    messageBox.textContent = 'Error: Unable to update data!';
     messageBox.style.color = 'red';
   } finally {
-    // Show the message box and hide it after 3 seconds
     messageBox.style.display = 'block';
     setTimeout(() => {
       messageBox.style.display = 'none';
     }, 3000);
   }
 });
-
-          
-              // Fetch and display orders
-            fetch('/orders')
-  .then((res) => res.json())
-  .then((orders) => {
-    const tbody = document.querySelector('table tbody');
-    const thead = document.querySelector('table thead');
-    thead.innerHTML = `
-      <tr>
-        <th>Product ID</th>
-        <th>Machine ID</th>
-        <th>Quantity</th>
-        <th>Order Date</th>
-        <th>Status</th>
-      </tr>
-    `;
-
-    // Add table rows dynamically based on fetched data
-    orders.forEach((order) => {
-      tbody.innerHTML += `
-        <tr>
-          <td>${order.product_id}</td>
-          <td>${order.machine_id}</td>
-          <td>${order.quantity}</td>
-          <td>${new Date(order.order_date).toLocaleDateString()}</td>
-          <td>${order.status}</td>
-        </tr>
-      `;
-    });
-  })
-  .catch((error) => console.error('Error fetching orders:', error));
-
             </script>
-            
-            
-   
-    
-    </section><!-- End Contact Section -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="footer-top">
       <div class="container">
         <div class="row">
-
           <div class="col-lg-3 col-md-6">
             <div class="footer-info">
               <h3>HS<span>.</span></h3>
@@ -306,7 +380,6 @@
               </div>
             </div>
           </div>
-
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
@@ -317,22 +390,18 @@
               <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
             </ul>
           </div>
-
-         
-
         </div>
       </div>
     </div>
-
     <div class="container">
       <div class="copyright">
         &copy; Copyright <strong><span>HS</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
-      Developed by <a style="color: #ffc451;">HS team</a>
+        Developed by <a style="color: #ffc451;">HS team</a>
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </footer>
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -345,10 +414,8 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
 </body>
 
 </html>
