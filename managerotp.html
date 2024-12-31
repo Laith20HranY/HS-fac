@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manager Page</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+    .otp-display {
+      font-size: 2em;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Manager OTP Page</h1>
+    <div id="otpDisplay" class="otp-display">Loading OTP...</div>
+  </div>
+
+  <script>
+    async function fetchOtp() {
+      const managerId = 'your_manager_id_here'; // Replace with the actual manager ID
+      try {
+        const response = await fetch(`/get-otp/${managerId}`);
+        if (response.ok) {
+          const data = await response.json();
+          document.getElementById('otpDisplay').innerText = `Current OTP: ${data.otp}`;
+        } else {
+          document.getElementById('otpDisplay').innerText = 'Error fetching OTP';
+        }
+      } catch (error) {
+        document.getElementById('otpDisplay').innerText = 'Error fetching OTP';
+      }
+    }
+
+    // Fetch OTP every 30 seconds
+    setInterval(fetchOtp, 30000);
+    // Initial fetch
+    fetchOtp();
+  </script>
+</body>
+</html>
