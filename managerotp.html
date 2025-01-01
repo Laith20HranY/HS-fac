@@ -18,26 +18,25 @@
     <div id="otpDisplay" class="otp-display">Loading OTP...</div>
   </div>
 
-  <script>
-    async function fetchOtp() {
-      const managerId = 'your_manager_id_here'; // Replace with the actual manager ID
-      try {
-        const response = await fetch(`/get-otp/${managerId}`);
-        if (response.ok) {
-          const data = await response.json();
-          document.getElementById('otpDisplay').innerText = `Current OTP: ${data.otp}`;
-        } else {
-          document.getElementById('otpDisplay').innerText = 'Error fetching OTP';
-        }
-      } catch (error) {
+ <script>
+   
+  async function fetchOtp() {
+    try {
+      const response = await fetch(`http://localhost:3000/get-otp`);
+      if (response.ok) {
+        const data = await response.json();
+        document.getElementById('otpDisplay').innerText = `Current OTP: ${data.otp}`;
+      } else {
         document.getElementById('otpDisplay').innerText = 'Error fetching OTP';
       }
+    } catch (error) {
+      document.getElementById('otpDisplay').innerText = 'Error fetching OTP';
     }
+  }
 
-    // Fetch OTP every 30 seconds
-    setInterval(fetchOtp, 30000);
-    // Initial fetch
-    fetchOtp();
+  setInterval(fetchOtp, 30000);
+  fetchOtp();
+
   </script>
 </body>
 </html>
