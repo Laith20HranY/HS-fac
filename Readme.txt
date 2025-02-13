@@ -1,1 +1,3 @@
-this is my graduating project ...i am happy to share it with you ...!!
+This is my graduating project ...i am happy to share it with you ...!!
+
+HS-factory-portal-sys- is a web-based application designed as a graduation project using Node.js, Express.js, and MongoDB for the backend. The primary purpose of the website is to serve as a portal system for managing factory operations. It leverages Bootstrap for a responsive and user-friendly interface along with HTML, JavaScript, and CSS. Users can access various functionalities related to factory management, such as tracking production, inventory, and personnel. The goal is to streamline factory processes and improve efficiency through digital solutions.
